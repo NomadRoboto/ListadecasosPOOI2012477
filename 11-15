@@ -1,1 +1,128 @@
+11) public class Main {
 
+  public static void main(String[] args) {
+    System.out.println("ingrese la hora y luego los minutos.");
+
+    System.out.print("hora: ");
+    int hora = Integer.parseInt(System.console().readLine());
+
+    System.out.print("minuto: ");
+    int minuto = Integer.parseInt(System.console().readLine());
+
+    int segundosTranscurridos = (hora * 3600) + (minuto * 60);
+    int segundosHastaMedianoche = (24 * 3600) - segundosTranscurridos;
+    System.out.printf("Desde las %02d:%02d hasta la medianoche faltan %d segundos.", hora, minuto, segundosHastaMedianoche);
+  }
+}
+
+12)import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Por favor, introduzca un número entero: ");
+        int numero = Integer.parseInt(scanner.nextLine());
+
+        boolean esPar = numero % 2 == 0;
+        boolean esDivisiblePor5 = numero % 5 == 0;
+
+        if (esPar && esDivisiblePor5) {
+            System.out.println("El número es par y divisible por 5.");
+        } else if (esPar) {
+            System.out.println("El número es par pero no es divisible por 5.");
+        } else if (esDivisiblePor5) {
+            System.out.println("El número no es par pero es divisible por 5.");
+        } else {
+            System.out.println("El número no es ni par ni divisible por 5.");
+        }
+
+        scanner.close();
+    }
+}
+
+13)import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Ingrese un número entero positivo o negativo (máximo 5 dígitos): ");
+        int numero = Math.abs(Integer.parseInt(scanner.nextLine()));
+
+        if (numero < 10) {
+            System.out.println("El número tiene 1 dígito.");
+        } else if (numero < 100) {
+            System.out.println("El número tiene 2 dígitos.");
+        } else if (numero < 1000) {
+            System.out.println("El número tiene 3 dígitos.");
+        } else if (numero < 10000) {
+            System.out.println("El número tiene 4 dígitos.");
+        } else if (numero < 100000) {
+            System.out.println("El número tiene 5 dígitos.");
+        } else {
+            System.out.println("El número tiene más de 5 dígitos.");
+        }
+
+        scanner.close();
+    }
+}
+
+14)import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+         System.out.print("Ingrese el día de la semana (1 para lunes, 2 para martes, 3 para miércoles, 4 para jueves, 5 para viernes): ");
+        int dia = scanner.nextInt();
+
+        System.out.print("Ingrese la hora (0-23): ");
+        int hora = scanner.nextInt();
+
+        System.out.print("Ingrese los minutos (0-59): ");
+        int minutos = scanner.nextInt();
+
+        int minutosHastaFinDeSemana = 0;
+
+        if (dia < 5 || (dia == 5 && hora < 15)) { // Lunes a jueves o viernes antes de las 15:00
+            minutosHastaFinDeSemana = ((4 - dia) * 24 * 60) + ((15 - hora) * 60) + (60 - minutos);
+        } else if (dia == 5 && hora >= 15) { // Viernes después de las 15:00
+            minutosHastaFinDeSemana = ((15 * 60) - (hora * 60)) - minutos;
+        }
+
+        System.out.println("Faltan " + minutosHastaFinDeSemana + " minutos para el fin de semana.");
+
+        scanner.close();
+    }
+}
+
+15)import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+      String combinacionCorrecta = "1234";
+        int intentos = 4;
+
+        while (intentos > 0) {
+            System.out.print("Introduce la combinación de la caja fuerte (4 cifras): ");
+            String combinacion = scanner.nextLine();
+
+            if (combinacion.equals(combinacionCorrecta)) {
+                System.out.println("La caja fuerte se ha abierto satisfactoriamente.");
+                break;
+            } else {
+                System.out.println("Lo siento, esa no es la combinación.");
+                intentos--;
+                System.out.println("Te quedan " + intentos + " intentos.");
+            }
+        }
+
+        if (intentos == 0) {
+            System.out.println("Se agotaron los intentos. La caja fuerte permanece cerrada.");
+        }
+
+        scanner.close();
+    }
+}
