@@ -61,4 +61,42 @@ public class Main {
     }
 }
 
-9)
+9) import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int horasTrabajadas;
+        int sueldoSemanal;
+
+        System.out.print("Introduzca el número de horas trabajadas durante la semana: ");
+        horasTrabajadas = scanner.nextInt();
+
+        if (horasTrabajadas <= 40) {
+            sueldoSemanal = 12 * horasTrabajadas;
+        } else {
+            sueldoSemanal = 12 * 40 + (horasTrabajadas - 40) * 16;
+        }
+
+        System.out.println("El sueldo semanal que le corresponde es de " + sueldoSemanal + " soles");
+        
+        scanner.close();
+    }
+}
+10) import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        double altura, tiempoDeCaida;
+        final double g = 9.81;
+
+        System.out.print("Ingrese la altura desde la que caerá el objeto (en metros): ");
+        altura = input.nextDouble();
+        tiempoDeCaida = Math.sqrt(2 * altura / g);
+
+        System.out.println("El tiempo que tardará en caer el objeto desde " + altura + " metros de altura es de " + tiempoDeCaida + " segundos.");
+    }
+}
