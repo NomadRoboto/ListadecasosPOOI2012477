@@ -1,3 +1,141 @@
-16)
+16)import java.util.Scanner;
 
-17)
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+       int contadorPositivos = 0;
+        int contadorNegativos = 0;
+
+        for (int i = 0; i < 10; i++) {
+            System.out.print("Ingrese un número: ");
+            double numero = scanner.nextDouble();
+
+            if (numero > 0) {
+                contadorPositivos++;
+            } else if (numero < 0) {
+                contadorNegativos++;
+            }
+        }
+
+        System.out.println("Total de números positivos: " + contadorPositivos);
+        System.out.println("Total de números negativos: " + contadorNegativos);
+
+        scanner.close();
+    }
+}
+
+17)import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int numero;
+        int cantidadNumeros = 0;
+        int sumaImpares = 0;
+        int mayorPar = Integer.MIN_VALUE;
+        System.out.println("Introduce números (introduce un número negativo para finalizar):");
+        while (true) {
+            numero = scanner.nextInt();
+            if (numero < 0) {
+                break;
+            }
+            cantidadNumeros++;
+            if (numero % 2 != 0) {
+                sumaImpares += numero;
+            } else {
+                if (numero > mayorPar) {
+                    mayorPar = numero;
+                }
+            }
+        }
+        if (cantidadNumeros == 0) {
+            System.out.println("No se introdujeron números.");
+        } else {
+            double mediaImpares = (double) sumaImpares / cantidadNumeros;
+
+            System.out.println("Cantidad de números introducidos: " + cantidadNumeros);
+            System.out.println("Media de números impares: " + mediaImpares);
+
+            if (mayorPar != Integer.MIN_VALUE) {
+                System.out.println("Mayor número par: " + mayorPar);
+            } else {
+                System.out.println("No se introdujeron números pares.");
+            }
+        }
+
+        scanner.close();
+    }
+}
+
+18) import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Ingrese el número límite: ");
+        int limite = scanner.nextInt();
+        System.out.print("Ingrese el divisor: ");
+        int divisor = scanner.nextInt();
+        System.out.println("Números enteros positivos menores a " + limite + " que no son divisibles por " + divisor + ":");
+        for (int i = 1; i < limite; i++) {
+            if (i % divisor != 0) {
+                System.out.print(i + " ");
+            }
+        }
+        scanner.close();
+    }
+}
+
+19) import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+ System.out.print("Ingrese la altura de la letra L: ");
+        int altura = scanner.nextInt();
+
+        for (int i = 1; i <= altura; i++) {
+            if (i < altura) {
+                System.out.print("*");
+            } else {
+                for (int j = 1; j <= altura / 2 + 1; j++) {
+                    System.out.print("*");
+                }
+            }
+            System.out.println();
+        }
+    }
+}
+20)  import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+System.out.print("Ingrese un número entero largo: ");
+        long numero = scanner.nextLong();
+        long numeroAbsoluto = Math.abs(numero);
+        String numeroComoTexto = Long.toString(numeroAbsoluto);
+        int longitud = numeroComoTexto.length();
+        long sumaDigitosPares = 0;
+        boolean seEncontraronPares = false;
+        System.out.print("Dígitos pares: ");
+        for (int i = 0; i < longitud; i++) {
+            char digitoChar = numeroComoTexto.charAt(i);
+            int digito = Character.getNumericValue(digitoChar);
+                        if (digito % 2 == 0) {
+                if (seEncontraronPares) {
+                    System.out.print(", ");
+                }
+                System.out.print(digito);
+                sumaDigitosPares += digito;
+                seEncontraronPares = true;
+            }
+        }
+        if (seEncontraronPares) {
+            System.out.println();
+            System.out.println("Suma de los dígitos pares: " + sumaDigitosPares);
+        } else {
+            System.out.println("No se encontraron dígitos pares.");
+        }
+    }
+}
