@@ -1,1 +1,98 @@
+1) public class Main
+{
+	public static void main(String[] args) {
+		
+        int x = 144;
+        int y = 999;
 
+        System.out.println("El valor de x es: " + x);
+        System.out.println("El valor de y es: " + y);
+
+        int suma = x + y;
+        int resta = x - y;
+        double division = (double) x / y;
+        int multiplicacion = x * y;
+
+        System.out.println("La suma de x e y es: " + suma);
+        System.out.println("La resta de x e y es: " + resta);
+        System.out.println("La división de x entre y es: " + division);
+        System.out.println("La multiplicación de x por y es: " + multiplicacion);
+	}
+}
+
+2) public class Main
+{
+	public static void main(String[] args) {
+        String nombre = "Jair Quintana";
+        String direccion = "Alameda del corregidor, 2035";
+        String telefono = "745756464";
+
+        // Mostrar los valores por pantalla
+        System.out.println("nombre contiene el valor: " + nombre);
+        System.out.println("direccion contiene el valor: " + direccion);
+        System.out.println("telefono contiene el valor: " + telefono);
+	}
+}
+
+3) import java.util.Scanner;
+
+public class Main
+{
+	public static void main(String[] args) {
+        double pEuro, euros, cPesetas;
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Ingrese el precio actual del euro: ");
+        pEuro = scanner.nextDouble();
+
+        System.out.print("Ingrese la cantidad de euros a convertir: ");
+        euros = scanner.nextDouble();
+
+        cPesetas = euros * pEuro;
+
+        System.out.println(euros + " euros equivalen a " + cPesetas + " pesetas");
+
+        scanner.close();
+	}
+}
+
+4)import java.util.Scanner;
+
+public class Main
+{
+	public static void main(String[] args) {
+  double pSoles, soles, cEuros;
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Ingrese el precio actual del sol: ");
+        pSoles = scanner.nextDouble();
+
+        System.out.print("Ingrese la cantidad de soles a convertir: ");
+        soles = scanner.nextDouble();
+
+        cEuros = soles * pSoles;
+
+        System.out.println(soles + " soles equivalen a " + cEuros + " euros");
+
+        scanner.close();
+	}
+}
+
+5)import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        double pSoles, soles, cEuros;
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Ingrese el total de horas trabajadas a la semana: ");
+        int horas = scanner.nextInt(); // Corregido aquí
+        double salario = 12 * horas;
+        System.out.println("Su salario semanal es de: " + salario + " euros");
+        
+        scanner.close();
+    }
+}
